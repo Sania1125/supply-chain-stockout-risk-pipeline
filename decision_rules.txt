@@ -1,0 +1,49 @@
+|--- days_of_supply <= 8.12
+|   |--- days_of_supply <= 3.83
+|   |   |--- days_of_supply <= 2.29
+|   |   |   |--- days_of_supply <= 1.26
+|   |   |   |   |--- demand_volatility_30d <= 7.63
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- demand_volatility_30d >  7.63
+|   |   |   |   |   |--- class: 1
+|   |   |   |--- days_of_supply >  1.26
+|   |   |   |   |--- class: 1
+|   |   |--- days_of_supply >  2.29
+|   |   |   |--- demand_volatility_30d <= 5.94
+|   |   |   |   |--- class: 1
+|   |   |   |--- demand_volatility_30d >  5.94
+|   |   |   |   |--- class: 1
+|   |--- days_of_supply >  3.83
+|   |   |--- category_Garden <= 0.50
+|   |   |   |--- reliability_score <= 0.79
+|   |   |   |   |--- avg_sales_7d <= 32.21
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- avg_sales_7d >  32.21
+|   |   |   |   |   |--- class: 1
+|   |   |   |--- reliability_score >  0.79
+|   |   |   |   |--- days_of_supply <= 5.24
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- days_of_supply >  5.24
+|   |   |   |   |   |--- class: 0
+|   |   |--- category_Garden >  0.50
+|   |   |   |--- class: 1
+|--- days_of_supply >  8.12
+|   |--- category_Garden <= 0.50
+|   |   |--- days_of_supply <= 9.63
+|   |   |   |--- avg_sales_30d <= 14.53
+|   |   |   |   |--- class: 0
+|   |   |   |--- avg_sales_30d >  14.53
+|   |   |   |   |--- base_lead_time_days <= 7.50
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- base_lead_time_days >  7.50
+|   |   |   |   |   |--- class: 0
+|   |   |--- days_of_supply >  9.63
+|   |   |   |--- class: 0
+|   |--- category_Garden >  0.50
+|   |   |--- days_of_supply <= 12.83
+|   |   |   |--- class: 1
+|   |   |--- days_of_supply >  12.83
+|   |   |   |--- avg_sales_30d <= 11.40
+|   |   |   |   |--- class: 0
+|   |   |   |--- avg_sales_30d >  11.40
+|   |   |   |   |--- class: 0

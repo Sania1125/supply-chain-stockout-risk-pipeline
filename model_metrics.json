@@ -1,37 +1,55 @@
 {
-  "logistic_regression":{
-    "threshold":0.5,
-    "precision":0.604,
-    "recall":0.758,
-    "f1":0.672,
-    "roc_auc":0.839,
-    "pr_auc":0.746,
-    "confusion_matrix":[
-      [
-        824,
-        310
-      ],
-      [
-        151,
-        472
-      ]
-    ]
+  "model": "DecisionTreeClassifier",
+  "target": "stockout_within_7d",
+  "prediction_horizon_days": 7,
+  "observation_unit": "SKU \u00d7 warehouse \u00d7 snapshot day",
+  "split": {
+    "train_end": "2023-07-31",
+    "validation_start": "2023-08-14",
+    "validation_end": "2023-10-02",
+    "test_start": "2023-10-16",
+    "rows": {
+      "train": 4320,
+      "validation": 1280,
+      "test": 1600
+    }
   },
-  "random_forest":{
-    "threshold":0.4,
-    "precision":0.594,
-    "recall":0.764,
-    "f1":0.669,
-    "roc_auc":0.821,
-    "pr_auc":0.715,
-    "confusion_matrix":[
+  "selection": {
+    "min_samples_leaf": 60,
+    "max_depth": 5,
+    "threshold": 0.8,
+    "validation": {
+      "precision": 0.785,
+      "recall": 0.789,
+      "f1": 0.787,
+      "roc_auc": 0.95,
+      "pr_auc": 0.81,
+      "confusion_matrix": [
+        [
+          1021,
+          46
+        ],
+        [
+          45,
+          168
+        ]
+      ]
+    }
+  },
+  "test": {
+    "precision": 0.698,
+    "recall": 0.508,
+    "f1": 0.588,
+    "roc_auc": 0.872,
+    "pr_auc": 0.653,
+    "confusion_matrix": [
       [
-        809,
-        325
+        1089,
+        92
       ],
       [
-        147,
-        476
+        206,
+        213
       ]
     ]
   }

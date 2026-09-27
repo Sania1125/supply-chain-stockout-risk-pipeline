@@ -10,8 +10,24 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("📦 Supply Chain Stockout Risk Pipeline")
-st.caption("Interactive simulation of daily demand, inventory, purchase orders, and supplier disruption risk.")
+st.title("📦 FMCG Inventory: 7-Day Stockout Risk")
+st.caption("Decision Tree decision support for a warehouse inventory manager. Synthetic demonstration data.")
+score_path = __import__('pathlib').Path(__file__).resolve().parent / 'model_output.csv'
+metrics_path = score_path.with_name('model_metrics.json')
+if score_path.exists() and metrics_path.exists():
+    import json
+    report = json.loads(metrics_path.read_text())
+    scored = pd.read_csv(score_path)
+    st.subheader("Replenishment review queue")
+    st.write("Each row is one SKU at one warehouse on the shown snapshot day. A High alert calls for a stock and open-order review today; a manager decides whether to place a purchase order.")
+    st.info(f"Held-out test: precision {report['test']['precision']:.1%}, recall {report['test']['recall']:.1%}, ROC-AUC {report['test']['roc_auc']:.3f}. Validation alert threshold: {report['selection']['threshold']:.2f}. Test recall is below the 75% validation goal; review missed risks before operational use.")
+    priority = {'High': 0, 'Medium': 1, 'Low': 2}
+    scored['priority'] = scored.risk_tier.map(priority)
+    show = scored.sort_values(['priority','stockout_risk_score'],ascending=[True,False]).drop(columns='priority')
+    st.dataframe(show, use_container_width=True)
+    st.download_button('Download replenishment review queue',show.to_csv(index=False),file_name='stockout_review_queue.csv',mime='text/csv')
+    st.caption("Scores are illustrative, not live forecasts. The simulation below is a separate what-if tool and does not retrain the model.")
+st.caption("Explore how demand and supplier disruption affect simulated inventory.")
 
 st.markdown(
     """
