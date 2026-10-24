@@ -1,41 +1,41 @@
 sku,product_name,category,unit_cost,supplier_id
-SKU0001,Popular HomeGoods,HomeGoods,26.47,5
-SKU0002,Hold Grocery,Grocery,24.95,2
-SKU0003,West HomeGoods,HomeGoods,49.29,4
-SKU0004,Full Toys,Toys,23.79,2
-SKU0005,Behind Toys,Toys,54.81,7
-SKU0006,Since Electronics,Electronics,302.44,7
-SKU0007,Song Electronics,Electronics,336.99,1
-SKU0008,Onto Apparel,Apparel,18.91,1
-SKU0009,Spend Grocery,Grocery,10.64,7
-SKU0010,Attention Grocery,Grocery,3.68,4
-SKU0011,Nice HomeGoods,HomeGoods,51.42,2
-SKU0012,One Garden,Garden,36.61,7
-SKU0013,Republican Electronics,Electronics,81.72,2
-SKU0014,Last Electronics,Electronics,58.57,8
-SKU0015,Control Apparel,Apparel,43.47,4
-SKU0016,Among Grocery,Grocery,13.7,3
-SKU0017,Operation Grocery,Grocery,16.81,2
-SKU0018,Service Grocery,Grocery,11.68,4
-SKU0019,Federal Electronics,Electronics,123.64,10
-SKU0020,Crime Garden,Garden,89.83,1
-SKU0021,Development Apparel,Apparel,17.74,10
-SKU0022,Alone HomeGoods,HomeGoods,92.89,1
-SKU0023,Dinner Apparel,Apparel,19.09,5
-SKU0024,Generation Electronics,Electronics,279.53,6
-SKU0025,Edge Garden,Garden,40.89,2
-SKU0026,Account Electronics,Electronics,104.71,4
-SKU0027,Three Electronics,Electronics,226.4,6
-SKU0028,Moment Toys,Toys,34.46,10
-SKU0029,Treat Grocery,Grocery,21.14,3
-SKU0030,Much Grocery,Grocery,6.21,3
-SKU0031,Care Garden,Garden,82.67,10
-SKU0032,Pass Apparel,Apparel,45.72,3
-SKU0033,Live HomeGoods,HomeGoods,99.91,9
-SKU0034,Hair Apparel,Apparel,43.72,7
-SKU0035,Cause Grocery,Grocery,15.88,7
-SKU0036,Type Electronics,Electronics,72.19,1
-SKU0037,Later Toys,Toys,67.57,4
-SKU0038,Foot HomeGoods,HomeGoods,110.12,5
-SKU0039,Feel Grocery,Grocery,20.95,10
-SKU0040,Produce Grocery,Grocery,8.75,3
+SKU0001,HouseholdCare Product 01,HouseholdCare,6.63,5
+SKU0002,Dairy Product 02,Dairy,19.96,2
+SKU0003,HouseholdCare Product 03,HouseholdCare,11.87,4
+SKU0004,PersonalCare Product 04,PersonalCare,15.12,2
+SKU0005,PersonalCare Product 05,PersonalCare,31.82,7
+SKU0006,Beverages Product 06,Beverages,21.47,7
+SKU0007,Beverages Product 07,Beverages,24.03,1
+SKU0008,Biscuits Product 08,Biscuits,4.73,1
+SKU0009,Dairy Product 09,Dairy,8.76,7
+SKU0010,Dairy Product 10,Dairy,3.31,4
+SKU0011,HouseholdCare Product 11,HouseholdCare,12.36,2
+SKU0012,PackagedFood Product 12,PackagedFood,11.98,7
+SKU0013,Beverages Product 13,Beverages,5.1,2
+SKU0014,Beverages Product 14,Beverages,3.38,8
+SKU0015,Biscuits Product 15,Biscuits,10.87,4
+SKU0016,Dairy Product 16,Dairy,11.16,3
+SKU0017,Dairy Product 17,Dairy,13.59,2
+SKU0018,Dairy Product 18,Dairy,9.57,4
+SKU0019,Beverages Product 19,Beverages,8.21,10
+SKU0020,PackagedFood Product 20,PackagedFood,29.94,1
+SKU0021,Biscuits Product 21,Biscuits,4.43,10
+SKU0022,HouseholdCare Product 22,HouseholdCare,21.89,1
+SKU0023,Biscuits Product 23,Biscuits,4.77,5
+SKU0024,Beverages Product 24,Beverages,19.77,6
+SKU0025,PackagedFood Product 25,PackagedFood,13.43,2
+SKU0026,Beverages Product 26,Beverages,6.8,4
+SKU0027,Beverages Product 27,Beverages,15.83,6
+SKU0028,PersonalCare Product 28,PersonalCare,20.86,10
+SKU0029,Dairy Product 29,Dairy,16.98,3
+SKU0030,Dairy Product 30,Dairy,5.29,3
+SKU0031,PackagedFood Product 31,PackagedFood,27.53,10
+SKU0032,Biscuits Product 32,Biscuits,11.43,3
+SKU0033,HouseholdCare Product 33,HouseholdCare,23.5,9
+SKU0034,Biscuits Product 34,Biscuits,10.93,7
+SKU0035,Dairy Product 35,Dairy,12.86,7
+SKU0036,Beverages Product 36,Beverages,4.39,1
+SKU0037,PersonalCare Product 37,PersonalCare,38.69,4
+SKU0038,HouseholdCare Product 38,HouseholdCare,25.84,5
+SKU0039,Dairy Product 39,Dairy,16.83,10
+SKU0040,Dairy Product 40,Dairy,7.28,3

@@ -6,13 +6,13 @@ inventory_snapshots. Simulates real inventory dynamics day-by-day
 stockouts in the output are a genuine emergent pattern, not a label
 bolted on afterward.
 """
+from pathlib import Path
 import random
 import datetime as dt
 import numpy as np
 import pandas as pd
-from faker import Faker
 
-fake = Faker()
+ROOT = Path(__file__).resolve().parent
 random.seed(11)
 np.random.seed(11)
 
@@ -24,17 +24,18 @@ END = dt.date(2023, 12, 31)
 N_DAYS = (END - START).days + 1
 DATES = [START + dt.timedelta(days=i) for i in range(N_DAYS)]
 
-CATEGORIES = ["Electronics", "Apparel", "Garden", "Grocery", "Toys", "HomeGoods"]
+CATEGORIES = ["Beverages", "Biscuits", "PackagedFood", "Dairy", "PersonalCare", "HouseholdCare"]
 REGIONS = ["North", "South", "East", "West"]
 
 def season_weight(category, month):
+    # Illustrative seasonal factors, not estimates from Pakistani business data.
     base = {
-        "Electronics": {11: 1.8, 12: 2.0, 1: 0.8},
-        "Apparel":     {3: 1.3, 4: 1.3, 11: 1.4, 12: 1.5},
-        "Garden":      {4: 1.8, 5: 2.0, 6: 1.7, 7: 1.4, 1: 0.4, 12: 0.4},
-        "Grocery":     {11: 1.3, 12: 1.5},
-        "Toys":        {11: 1.9, 12: 2.2},
-        "HomeGoods":   {1: 1.2, 11: 1.3, 12: 1.4},
+        "Beverages": {5: 1.5, 6: 1.8, 7: 1.7, 8: 1.5},
+        "Biscuits": {11: 1.2, 12: 1.3},
+        "PackagedFood": {11: 1.1, 12: 1.2},
+        "Dairy": {5: 1.2, 6: 1.3, 7: 1.3},
+        "PersonalCare": {5: 1.2, 6: 1.2},
+        "HouseholdCare": {11: 1.1, 12: 1.1},
     }
     return base.get(category, {}).get(month, 1.0)
 
@@ -43,7 +44,7 @@ suppliers = []
 for i in range(1, N_SUPPLIERS + 1):
     suppliers.append({
         "supplier_id": i,
-        "supplier_name": fake.company(),
+        "supplier_name": f"Synthetic Supplier {i:02d}",
         "region": random.choice(REGIONS),
         "base_lead_time_days": random.randint(5, 21),
         "reliability_score": round(random.uniform(0.75, 0.99), 2),
@@ -65,12 +66,12 @@ products = []
 for i in range(1, N_SKUS + 1):
     cat = random.choice(CATEGORIES)
     cost = round(random.uniform(*{
-        "Electronics": (40, 350), "Apparel": (8, 60), "Garden": (10, 90),
-        "Grocery": (2, 25), "Toys": (5, 70), "HomeGoods": (15, 150)
+        "Beverages": (2, 25), "Biscuits": (2, 15), "PackagedFood": (3, 30),
+        "Dairy": (2, 20), "PersonalCare": (5, 40), "HouseholdCare": (4, 35)
     }[cat]), 2)
     products.append({
         "sku": f"SKU{i:04d}",
-        "product_name": fake.word().title() + " " + cat,
+        "product_name": f"{cat} Product {i:02d}",
         "category": cat,
         "unit_cost": cost,
         "supplier_id": random.randint(1, N_SUPPLIERS),
@@ -149,12 +150,12 @@ daily_sales_df = pd.DataFrame(daily_sales_rows)
 inventory_df = pd.DataFrame(inventory_rows)
 po_df = pd.DataFrame(po_rows)
 
-products_df.to_csv("data/raw/products.csv", index=False)
-suppliers_df.to_csv("data/raw/suppliers.csv", index=False)
-warehouses_df.to_csv("data/raw/warehouses.csv", index=False)
-daily_sales_df.to_csv("data/raw/daily_sales.csv", index=False)
-inventory_df.to_csv("data/raw/inventory_snapshots.csv", index=False)
-po_df.to_csv("data/raw/purchase_orders.csv", index=False)
+products_df.to_csv(ROOT / "products.csv", index=False)
+suppliers_df.to_csv(ROOT / "suppliers.csv", index=False)
+warehouses_df.to_csv(ROOT / "warehouses.csv", index=False)
+daily_sales_df.to_csv(ROOT / "daily_sales.csv", index=False)
+inventory_df.to_csv(ROOT / "inventory_snapshots.csv", index=False)
+po_df.to_csv(ROOT / "purchase_orders.csv", index=False)
 
 print("daily_sales", len(daily_sales_df))
 print("inventory_snapshots", len(inventory_df))
@@ -162,3 +163,4 @@ print("purchase_orders", len(po_df))
 print("stockout days:", inventory_df.stockout_flag.sum(), "/", len(inventory_df),
       f"({100*inventory_df.stockout_flag.mean():.1f}%)")
 print("disrupted_suppliers", disrupted_suppliers)
+
