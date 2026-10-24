@@ -1,0 +1,134 @@
+{
+  "data": "Seeded synthetic FMCG simulation; no measured company savings",
+  "selection_metric": "Pooled expanding-window validation average precision",
+  "selected_model": "LogisticRegression",
+  "selected_threshold": 0.85,
+  "test_start": "2023-10-16",
+  "development_rows": 5760,
+  "test_rows": 1600,
+  "test_positive_rate": 0.049375,
+  "test_results": {
+    "MajorityBaseline": {
+      "accuracy": 0.950625,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "average_precision": 0.049375,
+      "roc_auc": 0.5,
+      "confusion_matrix": [
+        [
+          1521,
+          0
+        ],
+        [
+          79,
+          0
+        ]
+      ],
+      "alerts": 0
+    },
+    "DecisionTree_leaf30": {
+      "accuracy": 0.911875,
+      "precision": 0.2753623188405797,
+      "recall": 0.4810126582278481,
+      "f1": 0.35023041474654376,
+      "average_precision": 0.33003261977343223,
+      "roc_auc": 0.9244334590001582,
+      "confusion_matrix": [
+        [
+          1421,
+          100
+        ],
+        [
+          41,
+          38
+        ]
+      ],
+      "alerts": 138
+    },
+    "DecisionTree_leaf60": {
+      "accuracy": 0.879375,
+      "precision": 0.2564102564102564,
+      "recall": 0.759493670886076,
+      "f1": 0.38338658146964855,
+      "average_precision": 0.37687447410518765,
+      "roc_auc": 0.926651353623116,
+      "confusion_matrix": [
+        [
+          1347,
+          174
+        ],
+        [
+          19,
+          60
+        ]
+      ],
+      "alerts": 234
+    },
+    "LogisticRegression": {
+      "accuracy": 0.943125,
+      "precision": 0.43478260869565216,
+      "recall": 0.5063291139240507,
+      "f1": 0.4678362573099415,
+      "average_precision": 0.48875178205667524,
+      "roc_auc": 0.9400128163516673,
+      "confusion_matrix": [
+        [
+          1469,
+          52
+        ],
+        [
+          39,
+          40
+        ]
+      ],
+      "alerts": 92
+    },
+    "RandomForest": {
+      "accuracy": 0.924375,
+      "precision": 0.34558823529411764,
+      "recall": 0.5949367088607594,
+      "f1": 0.4372093023255814,
+      "average_precision": 0.45395469364362007,
+      "roc_auc": 0.9402624855399929,
+      "confusion_matrix": [
+        [
+          1432,
+          89
+        ],
+        [
+          32,
+          47
+        ]
+      ],
+      "alerts": 136
+    },
+    "StockCoverageRule": {
+      "accuracy": 0.716875,
+      "precision": 0.14038461538461539,
+      "recall": 0.9240506329113924,
+      "f1": 0.24373956594323873,
+      "average_precision": 0.13347249269717626,
+      "roc_auc": 0.8150825156667416,
+      "confusion_matrix": [
+        [
+          1074,
+          447
+        ],
+        [
+          6,
+          73
+        ]
+      ],
+      "alerts": 520
+    }
+  },
+  "note": "Original model.py artifacts remain separate. Dashboard uses its original Decision Tree.",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.8.0",
+    "joblib": "1.5.3"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "rows": 7520,
+  "positive_rate": 0.11170212765957446,
+  "missing_values": 0,
+  "duplicate_keys": 0,
+  "by_category": {
+    "Beverages": {
+      "count": 1692,
+      "mean": 0.2364066193853428
+    },
+    "Biscuits": {
+      "count": 1128,
+      "mean": 0.07712765957446809
+    },
+    "Dairy": {
+      "count": 2068,
+      "mean": 0.08462282398452611
+    },
+    "HouseholdCare": {
+      "count": 1128,
+      "mean": 0.0700354609929078
+    },
+    "PackagedFood": {
+      "count": 752,
+      "mean": 0.06382978723404255
+    },
+    "PersonalCare": {
+      "count": 752,
+      "mean": 0.0678191489361702
+    }
+  }
+}
