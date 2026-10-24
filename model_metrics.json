@@ -15,41 +15,41 @@
     }
   },
   "selection": {
-    "min_samples_leaf": 60,
+    "min_samples_leaf": 30,
     "max_depth": 5,
-    "threshold": 0.8,
+    "threshold": 0.65,
     "validation": {
-      "precision": 0.785,
-      "recall": 0.789,
-      "f1": 0.787,
-      "roc_auc": 0.95,
-      "pr_auc": 0.81,
+      "precision": 0.604,
+      "recall": 0.927,
+      "f1": 0.731,
+      "roc_auc": 0.915,
+      "pr_auc": 0.581,
       "confusion_matrix": [
         [
-          1021,
-          46
+          907,
+          141
         ],
         [
-          45,
-          168
+          17,
+          215
         ]
       ]
     }
   },
   "test": {
-    "precision": 0.698,
-    "recall": 0.508,
-    "f1": 0.588,
-    "roc_auc": 0.872,
-    "pr_auc": 0.653,
+    "precision": 0.251,
+    "recall": 0.785,
+    "f1": 0.38,
+    "roc_auc": 0.913,
+    "pr_auc": 0.231,
     "confusion_matrix": [
       [
-        1089,
-        92
+        1336,
+        185
       ],
       [
-        206,
-        213
+        17,
+        62
       ]
     ]
   }
